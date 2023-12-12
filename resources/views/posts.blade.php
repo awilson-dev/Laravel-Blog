@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-
-<title>My Blog</title>
-<link rel="stylesheet" href="/app.css">
-
-<body>
+<x-layout>
+    @foreach ($posts as $post)
     <article>
-        <h1><a href="/post">My First Post</a></h1>
+        <h1>
+            <a href="/posts/{{ $post->slug }}">
+                {{ $post->title }}
+            </a>
+        </h1>
 
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt corporis quis alias sint corrupti voluptas expedita libero aperiam, sed sapiente necessitatibus error, modi, hic delectus ab vel nemo voluptates fugit.</p>
+        <div>
+            {{ $post->excerpt }}
+        </div>
     </article>
-
-    <article>
-    <h1><a href="/post">My Second Post</a></h1>
-
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt corporis quis alias sint corrupti voluptas expedita libero aperiam, sed sapiente necessitatibus error, modi, hic delectus ab vel nemo voluptates fugit.</p>
-    </article>
-
-    <article>
-    <h1><a href="/post">My Third Post</a></h1>
-
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt corporis quis alias sint corrupti voluptas expedita libero aperiam, sed sapiente necessitatibus error, modi, hic delectus ab vel nemo voluptates fugit.</p>
-    </article>
-</body>
+    @endforeach
+</x-layout>
