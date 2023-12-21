@@ -39,5 +39,11 @@
                 </div>
             </div>
         </div>
+
+        @if ($posts->count() >= 50)
+            <div class="mt-4">
+                {{ $posts->links() }}
+            </div>
+        @endif
     </x-setting>
 </x-layout>
