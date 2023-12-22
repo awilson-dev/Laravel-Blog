@@ -45,3 +45,4 @@ Route::middleware('can:admin')->group(function () {
 });
 
 Route::get('user/profile', [UserController::class, 'index'])->middleware('auth');
+Route::patch('user/profile', [UserController::class, 'update'])->middleware('auth');

@@ -7,19 +7,26 @@
 
     <div class="flex">
         <aside class="w-48 flex-shrink-0">
-            <h4 class="font-semibold mb-4">Links</h4>            
+            <h4 class="font-semibold mb-4">Links</h4>
 
             <ul>
                 <li>
-                    <a href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">All Posts</a>
+                    <a href="/user/profile" class="{{ request()->is('user/profile') ? 'text-blue-500' : '' }}">My Profile</a>
                 </li>
 
-                <li>
-                    <a href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}">New Post</a>
-                </li>
+                @admin
+                    <li>
+                        <a href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">All Posts</a>
+                    </li>
+
+                    <li>
+                        <a href="/admin/posts/create"
+                            class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}">New Post</a>
+                    </li>
+                @endadmin
             </ul>
         </aside>
-    
+
         <main class="flex-1">
             <x-panel>
                 {{ $slot }}
