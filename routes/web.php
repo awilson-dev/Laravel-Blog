@@ -44,4 +44,4 @@ Route::middleware('can:admin')->group(function () {
     Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy']);
 });
 
-Route::get('user/profile', [UserController::class, 'index']);
+Route::get('user/profile', [UserController::class, 'index'])->middleware('auth');
